@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-size: 100%;  
+    background: #121519;
+   
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+}
+
+.logo{
+    width: 72px;
+    border-radius: 40px;
+    border: 2px solid white;
+}
+
+.menu-nav{
+    display: flex;
+    gap: 32px;
+}
+
+.menu-item{
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.conteudo{
+    border-top: 1px solid white;
+}
+
+.section-principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 32px;
+}
+
+.section-principal-text{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: white;
+}
+
+.section-principal-titulo{
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+}
+
+.section-principal-paragrafo{
+    display: flex;
+    width: 630px;
+    text-align: justify;
+}
+
+.led-image{
+    width: 50px;
+}
+
+.div-leds{
+    display: flex;
+    gap: 32px;
+}
+
+.section-console{
+    display: flex;
+    height: 120px;
+    padding: 24px;
+    padding-top: 24px;
+    margin-top: 24px;
+    margin-left: 250px;
+    margin-right: 250px;
+    border: 5px solid grey;
+    overflow-y: scroll;
+    background-color: #1f2330;
+    font-family: 'IBM Plex Mono', monospace;
+    color: greenyellow;
+    font-size: 18px;
+}
