@@ -12,7 +12,6 @@ client.connect({onSuccess:onConnect});
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   resposta.innerHTML += ">>Conexão bem sucedida !<br>";
-  autoScroll();
   client.subscribe("duarte/led");
 }
 
@@ -78,7 +77,7 @@ function sendMessage(msg)
     message = new Paho.MQTT.Message(msg);
     message.destinationName = "duarte/led";
     client.send(message);
-    autoScroll();
+    
 }
 
 function autoScroll()
@@ -91,13 +90,13 @@ function autoScroll()
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
     resposta.innerHTML += ">>Conexão perdida! erro:"+responseObject.errorMessage;
-    autoScroll();
+   autoScroll();
   }
 }
 
 // called when a message arrivesa
 function onMessageArrived(message) {
     resposta.innerHTML += ">>Mensagem recebida!<br>";
-    resposta.innerHTML += ">>Topico: " + message.destinationName+ " enviando....." + " " + message.payloadString+ "<br>";
+    resposta.innerHTML += ">>Topico: " + message.destinationName+ " enviando " + message.payloadString+ " ....<br>";
     autoScroll();
 }
