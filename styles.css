@@ -85,7 +85,7 @@ body{
     margin-top: 24px;
     margin-left: 250px;
     margin-right: 250px;
-    border: 5px solid grey;
+    border: 3px solid grey;
     overflow-y: scroll;
     background-color: #1f2330;
     font-family: 'IBM Plex Mono', monospace;

@@ -8,5 +8,7 @@ No header existem tres links sendo eles, repositorio do GitHub, uma pasta no Dri
 ## Imagens do projeto
 
 <p>
-
+<img src="assets/readMe/exercicioHtml.png">
+<img src="assets/readMe/exercicioEsp.png">
+<img src="assets/readMe/exercicioMqtt.png">
 </p>
