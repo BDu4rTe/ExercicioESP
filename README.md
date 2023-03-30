@@ -7,7 +7,7 @@ No header existem tres links sendo eles, repositorio do GitHub, uma pasta no Dri
 
 ## Imagens do projeto
 
-<p justify-contente="space-be">
+<p>
 
 ### Pagina HTML
 
