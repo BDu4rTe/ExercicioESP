@@ -97,6 +97,6 @@ function onConnectionLost(responseObject) {
 // called when a message arrivesa
 function onMessageArrived(message) {
     resposta.innerHTML += ">>Topico: " + message.destinationName+ " enviando " + message.payloadString+ " ....<br>";
-    resposta.innerHTML += ">>Mensagem recebida!<br>";
+    resposta.innerHTML += ">>Mensagem enviada!<br>";
     autoScroll();
 }
