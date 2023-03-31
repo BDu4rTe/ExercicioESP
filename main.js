@@ -6,12 +6,13 @@ client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client
-client.connect({onSuccess:onConnect});
+client.connect({onSuccess:onConnect, cleanSession: true});
 
 // called when the client connects
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   resposta.innerHTML += ">>Conexão bem sucedida !<br>";
+  client.send( payload="", retained=false)
   client.subscribe("duarte/led");
 }
 
@@ -76,8 +77,10 @@ function sendMessage(msg)
 {
     message = new Paho.MQTT.Message(msg);
     message.destinationName = "duarte/led";
+    // message.retained = false;
     client.send(message);
-    
+    resposta.innerHTML += ">>Topico: " + message.destinationName + " enviando " + message.payloadString+ " ....<br>";
+    autoScroll();
 }
 
 function autoScroll()
@@ -89,14 +92,13 @@ function autoScroll()
 // called when the client loses its connection
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
-    resposta.innerHTML += ">>Conexão perdida! erro:"+responseObject.errorMessage;
+    resposta.innerHTML += ">>Conexão perdida! erro: "+responseObject.errorMessage;
    autoScroll();
   }
 }
 
 // called when a message arrivesa
 function onMessageArrived(message) {
-    resposta.innerHTML += ">>Topico: " + message.destinationName+ " enviando " + message.payloadString+ " ....<br>";
-    resposta.innerHTML += ">>Mensagem enviada!<br>";
+    resposta.innerHTML += ">>Mensagem recebida: " + message.payloadString + " Retain: " + message.retained + "<br>";
     autoScroll();
 }
